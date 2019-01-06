@@ -1,6 +1,7 @@
 {
   "projects": {
     "react": "react-43669",
-    "default": "react-43669"
+    "default": "react-43669",
+    "y": "react-43669"
   }
 }

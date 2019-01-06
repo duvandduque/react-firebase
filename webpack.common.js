@@ -2,6 +2,7 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -13,7 +14,12 @@ module.exports = {
       title: "Production",
       template: "./public/index.html",
       filename: "./index.html"
-    })
+    }),
+    new CopyWebpackPlugin([
+      // relative path is from src
+      { from: "./public/favicon.ico" },
+      { from: "./public/manifest.json" } 
+    ])
   ],
   output: {
     filename: "[name].bundle.js",
